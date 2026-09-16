@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Surface and Background Colors */
+  --bg-primary: #050608;
+  --bg-secondary: #0B0D12;
+  --surface: #11141B;
+  --surface-elevated: #151922;
+
+  /* Text Colors */
+  --text-primary: #F7F8FA;
+  --text-secondary: #A6ACB8;
+  --text-muted: #707785;
+
+  /* Borders & Accents */
+  --border: #252A34;
+  --blue: #4C7DFF;
+  --violet: #8057FF;
+  --magenta: #D65CFF;
+
+  /* Brand Gradient */
+  --brand-gradient: linear-gradient(90deg, #4C7DFF, #8057FF, #D65CFF);
+
+  /* Fonts */
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: auto; /* Managed smoothly by Lenis */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, button, .font-heading {
+  font-family: var(--font-heading);
+}
+
+p, span, a, input, textarea, .font-body {
+  font-family: var(--font-body);
+}
+
+/* Reusable Container Class */
+.container-custom {
+  max-width: 1360px;
+  width: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    width: calc(100% - 3rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    width: calc(100% - 4rem);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-custom {
+    width: calc(100% - 5rem);
+  }
+}
+
+/* Reusable Global Section Spacing */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+/* Gradient Text Helper */
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
