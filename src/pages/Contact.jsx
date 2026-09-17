@@ -171,7 +171,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              <div className="relative rounded-[28px] sm:rounded-[32px] bg-[#0E1016]/90 backdrop-blur-2xl border border-white/[0.09] shadow-[0_20px_70px_rgba(0,0,0,0.7)] p-7 sm:p-10 lg:p-12 text-left overflow-hidden">
+              <div className="relative rounded-[28px] sm:rounded-[32px] bg-[#0E1016]/90 backdrop-blur-2xl border border-white/[0.09] shadow-[0_20px_70px_rgba(0,0,0,0.7)] p-6 sm:p-8 lg:p-8 xl:p-12 text-left overflow-hidden">
                 {/* Top Subtle Gradient Edge Highlight */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#8967FD]/60 to-transparent" />
 

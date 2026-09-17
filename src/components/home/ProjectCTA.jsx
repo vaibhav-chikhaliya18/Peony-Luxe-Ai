@@ -39,7 +39,7 @@ export default function ProjectCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-heading font-extrabold text-[48px] sm:text-7xl md:text-8xl lg:text-[98px] xl:text-[104px] leading-[0.98] tracking-[-0.035em] text-white select-none"
+          className="font-heading font-extrabold text-[44px] sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[98px] 2xl:text-[104px] leading-[0.98] tracking-[-0.035em] text-white select-none"
         >
           <span className="block">Have a Vision?</span>
           <span className="block mt-1 sm:mt-2">Let’s Bring It</span>

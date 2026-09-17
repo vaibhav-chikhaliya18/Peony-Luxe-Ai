@@ -75,7 +75,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-7 xl:space-x-8">
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-7 2xl:space-x-8">
           {navLinks.map((link) => {
             const isActive =
               location.pathname === link.path ||
@@ -85,7 +85,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.path}
                 onClick={(e) => handleLinkClick(e, link.path)}
-                className={`text-[13px] xl:text-sm transition-colors duration-200 ${
+                className={`text-xs xl:text-[13.5px] 2xl:text-sm tracking-wide transition-colors duration-200 whitespace-nowrap ${
                   isActive
                     ? 'text-white font-medium'
                     : 'text-[#9DA3AF] hover:text-white font-normal'

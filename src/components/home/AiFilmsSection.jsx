@@ -46,7 +46,7 @@ export default function AiFilmsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-heading font-extrabold text-[52px] sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[112px] leading-[0.98] tracking-[-0.035em] text-white select-none"
+          className="font-heading font-extrabold text-[48px] sm:text-7xl md:text-8xl lg:text-[88px] xl:text-[104px] 2xl:text-[112px] leading-[0.98] tracking-[-0.035em] text-white select-none"
         >
           <span className="block">Ideas That</span>
           <span className="block mt-1 sm:mt-2">

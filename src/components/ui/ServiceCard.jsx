@@ -1,9 +1,10 @@
-import { Sparkles, Video, Film, BookOpen, Compass, ArrowRight } from 'lucide-react';
+import { Sparkles, Video, Layers, Film, BookOpen, Compass, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const iconMap = {
   Sparkles,
   Video,
+  Layers,
   Film,
   BookOpen,
   Compass,
@@ -51,7 +52,13 @@ export default function ServiceCard({ service, index }) {
 
       <div className="mt-8 pt-4 border-t border-border-brand/30">
         <Link
-          to="/services"
+          to={
+            service.id === 'ai-films' || service.title === 'AI Films'
+              ? '/ai-films'
+              : service.id === 'brand-stories'
+              ? '/brand-stories'
+              : '/services'
+          }
           className="inline-flex items-center text-xs font-semibold text-text-primary group-hover:text-brand-magenta transition-colors gap-1.5"
         >
           Explore Service

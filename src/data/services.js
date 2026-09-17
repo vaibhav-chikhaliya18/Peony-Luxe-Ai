@@ -26,6 +26,19 @@ export const services = [
     ]
   },
   {
+    id: 'image-catalogue',
+    title: 'Image Catalogue',
+    shortDescription: 'Comprehensive high-resolution visual lookbooks, product catalogues, and brand series crafted with aesthetic precision.',
+    tagline: 'Meticulously crafted visual catalogues for luxury brands.',
+    icon: 'Layers',
+    deliverables: [
+      'Product Lookbook Suites',
+      'Editorial Image Catalogues',
+      'Consistent Lighting Presets',
+      'High-Resolution Print Renders'
+    ]
+  },
+  {
     id: 'ai-films',
     title: 'AI Films',
     shortDescription: 'Narrative-driven cinematic shorts, conceptual trailers, and avant-garde films combining generative AI with classical film grammar.',
@@ -49,19 +62,6 @@ export const services = [
       'Digital Lookbooks & Mood Films',
       'Multi-Platform Campaign Strategy',
       'Interactive Brand Experiences'
-    ]
-  },
-  {
-    id: 'creative-campaigns',
-    title: 'Creative Campaigns',
-    shortDescription: 'End-to-end multi-channel creative direction blending generative artistry, social-first films, and iconic key visuals.',
-    tagline: 'Boundary-pushing campaigns designed for global impact.',
-    icon: 'Compass',
-    deliverables: [
-      'Omnichannel Campaign Strategy',
-      'Cross-Platform Asset Suites',
-      'Generative Social Content',
-      'Performance-Optimized Creative'
     ]
   }
 ];

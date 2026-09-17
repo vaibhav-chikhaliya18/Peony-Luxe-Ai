@@ -109,7 +109,7 @@ export default function Process() {
                 </div>
 
                 {/* 2. Step Details Card with Glass Shimmer & Lift on Hover */}
-                <div className="relative w-full rounded-2xl p-4 sm:p-5 transition-all duration-300 -ml-4 border border-transparent group-hover:border-white/10 group-hover:bg-[#0E1018]/90 group-hover:backdrop-blur-md group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8),0_0_20px_rgba(137,103,253,0.25)] overflow-hidden">
+                <div className="relative w-full rounded-2xl p-3 sm:p-4 lg:p-3 xl:p-5 transition-all duration-300 -ml-1 sm:-ml-2 lg:-ml-2 xl:-ml-4 border border-transparent group-hover:border-white/10 group-hover:bg-[#0E1018]/90 group-hover:backdrop-blur-md group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8),0_0_20px_rgba(137,103,253,0.25)] overflow-hidden">
                   {/* Subtle Top Radial Glow inside Card on Hover */}
                   <div
                     className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"

@@ -22,7 +22,7 @@ export default function AboutPreview() {
             </p>
 
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[58px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8">
+            <h2 className="text-4xl sm:text-5xl lg:text-[44px] xl:text-[54px] 2xl:text-[58px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8">
               <span className="block">We Create What</span>
               <span className="block mt-1 sm:mt-1.5">Doesn’t Exist Yet.</span>
             </h2>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Video, Film, BookOpen, ArrowUpRight } from 'lucide-react';
+import { Sparkles, Video, Layers, Film, BookOpen, ArrowUpRight } from 'lucide-react';
 
 const servicesData = [
   {
@@ -22,8 +22,17 @@ const servicesData = [
     link: '/services',
   },
   {
-    id: 'ai-films',
+    id: 'image-catalogue',
     number: '03',
+    title: 'Image Catalogue',
+    description:
+      'Comprehensive high-resolution visual lookbooks, product catalogues, and brand series crafted with aesthetic precision.',
+    icon: Layers,
+    link: '/services',
+  },
+  {
+    id: 'ai-films',
+    number: '04',
     title: 'AI Films',
     description:
       'Short-form AI films with narrative depth, visual richness and cinematic production values. Stories that feel completely real.',
@@ -32,7 +41,7 @@ const servicesData = [
   },
   {
     id: 'brand-stories',
-    number: '04',
+    number: '05',
     title: 'Brand Stories',
     description:
       'We translate brand identity into visual narratives that forge lasting emotional connections with audiences.',
@@ -61,8 +70,8 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* 4 Cards Grid Layout with Best-in-Class Luxury Hover Effects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        {/* 5 Cards Grid Layout with Best-in-Class Luxury Hover Effects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6">
           {servicesData.map((service, index) => {
             const Icon = service.icon;
 
@@ -86,7 +95,7 @@ export default function ServicesSection() {
                   <div className="absolute inset-0 rounded-[22px] bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent group-hover:from-[#6286FE] group-hover:via-[#8967FD] group-hover:to-[#D770FF] transition-all duration-500 p-[1px]">
                     
                     {/* 3. Card Inner Dark Surface */}
-                    <div className="relative w-full h-full rounded-[21px] bg-[#0B0D13] group-hover:bg-[#0E1018]/95 backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-500 shadow-lg group-hover:shadow-[0_20px_40px_-15px_rgba(137,103,253,0.35)]">
+                    <div className="relative w-full h-full rounded-[21px] bg-[#0B0D13] group-hover:bg-[#0E1018]/95 backdrop-blur-xl p-5 sm:p-6 lg:p-5 xl:p-7 flex flex-col justify-between overflow-hidden transition-all duration-500 shadow-lg group-hover:shadow-[0_20px_40px_-15px_rgba(137,103,253,0.35)]">
                       
                       {/* Top Accent Radial Spotlight Glow inside the card */}
                       <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full bg-gradient-to-b from-[#8967FD]/25 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -100,9 +109,9 @@ export default function ServicesSection() {
                       {/* TOP CONTENT */}
                       <div className="relative z-10">
                         {/* Header Row: Icon Badge & Discipline Monospace Number */}
-                        <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center justify-between mb-5 xl:mb-6">
                           {/* Glowing Icon Container */}
-                          <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-[#8967FD]/60 group-hover:bg-gradient-to-tr group-hover:from-[#6286FE]/20 group-hover:to-[#8967FD]/30 group-hover:shadow-[0_0_24px_rgba(137,103,253,0.45)] flex items-center justify-center text-zinc-400 group-hover:text-white transition-all duration-500 group-hover:scale-110">
+                          <div className="w-11 h-11 xl:w-12 xl:h-12 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-[#8967FD]/60 group-hover:bg-gradient-to-tr group-hover:from-[#6286FE]/20 group-hover:to-[#8967FD]/30 group-hover:shadow-[0_0_24px_rgba(137,103,253,0.45)] flex items-center justify-center text-zinc-400 group-hover:text-white transition-all duration-500 group-hover:scale-110">
                             <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 text-zinc-300 group-hover:text-white" />
                           </div>
 
@@ -113,12 +122,12 @@ export default function ServicesSection() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-heading font-bold text-white text-lg sm:text-[19px] tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-white group-hover:to-[#C4B5FD] transition-all duration-300">
+                        <h3 className="font-heading font-bold text-white text-base sm:text-[18px] lg:text-[17px] xl:text-[19px] tracking-tight mb-2.5 xl:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-white group-hover:to-[#C4B5FD] transition-all duration-300">
                           {service.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-[#8F95A5] group-hover:text-zinc-300 text-xs sm:text-[13.5px] leading-[1.65] font-normal transition-colors duration-300">
+                        <p className="text-[#8F95A5] group-hover:text-zinc-300 text-xs sm:text-[13px] xl:text-[13.5px] leading-[1.65] font-normal transition-colors duration-300">
                           {service.description}
                         </p>
                       </div>

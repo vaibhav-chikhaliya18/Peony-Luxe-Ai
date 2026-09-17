@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ProjectHero from '../components/work/ProjectHero';
 import ProjectOverview from '../components/work/ProjectOverview';
@@ -16,6 +16,10 @@ export default function ProjectDetails() {
 
   const currentIndex = projects.findIndex((p) => p.slug === slug);
   const project = projects[currentIndex];
+
+  if (slug === 'ai-short-film' || project?.category === 'AI Films' || project?.category === 'AI Film') {
+    return <Navigate to="/ai-films" replace />;
+  }
 
   if (!project) {
     return (

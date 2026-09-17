@@ -52,7 +52,7 @@ export default function WhyPeony() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[58px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8">
+            <h2 className="text-4xl sm:text-5xl lg:text-[44px] xl:text-[54px] 2xl:text-[58px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8">
               <span className="block">Built for Brands</span>
               <span className="block mt-1 sm:mt-1.5">That Want More.</span>
             </h2>

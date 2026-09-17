@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const filterCategories = [
   'All',
-  'Fashion',
-  'Products',
-  'Branding',
-  'AI Videos',
-  'AI Films',
-  'Brand Stories',
+  'AI Image',
+  'AI Video',
+  'Image Catalogue',
+  'AI Film',
+  'Brand Story',
 ];
 
 const portfolioItems = [
@@ -16,18 +16,18 @@ const portfolioItems = [
     id: '1',
     slug: 'noir-fashion-campaign',
     title: 'Noir Fashion Campaign',
-    category: 'Fashion',
-    categories: ['Fashion'],
+    category: 'AI Image',
+    categories: ['AI Image', 'Image Catalogue'],
     column: 1,
-    image: '/images/projects/noir-fashion.jpg',
+    image: '/images/projects/client-1-1.jpg',
     aspect: 'tall', // spans full left column in 'All'
   },
   {
     id: '2',
     slug: 'ai-short-film',
     title: 'AI Short Film',
-    category: 'AI Films',
-    categories: ['AI Films', 'AI Videos'],
+    category: 'AI Film',
+    categories: ['AI Film', 'AI Video'],
     column: 2,
     image: '/images/projects/ai-short-film.jpg',
     aspect: 'landscape',
@@ -36,8 +36,8 @@ const portfolioItems = [
     id: '3',
     slug: 'brand-stories',
     title: 'Brand Stories Editorial',
-    category: 'Brand Stories',
-    categories: ['Brand Stories', 'Fashion'],
+    category: 'Brand Story',
+    categories: ['Brand Story'],
     column: 2,
     image: '/images/projects/brand-stories-model.jpg',
     aspect: 'portrait',
@@ -46,59 +46,60 @@ const portfolioItems = [
     id: '4',
     slug: 'brand-story',
     title: 'Brand Story Flatlay',
-    category: 'Products',
-    categories: ['Products', 'Brand Stories'],
+    category: 'Brand Story',
+    categories: ['Brand Story', 'Image Catalogue'],
     column: 3,
     image: '/images/projects/brand-story.jpg',
     aspect: 'landscape',
   },
   {
     id: '5',
-    slug: 'creative-campaigns',
-    title: 'Creative Campaign Art',
-    category: 'Branding',
-    categories: ['Branding'],
-    column: 3,
-    image: '/images/projects/creative-campaign.jpg',
+    slug: 'cosmetic-ai-motion',
+    title: 'AI Fashion Video',
+    category: 'AI Video',
+    categories: ['AI Video'],
+    image: '/images/projects/client-3-poster.jpg',
     aspect: 'landscape',
   },
   {
     id: '6',
     slug: 'product-branding',
     title: 'Product Branding',
-    category: 'Products',
-    categories: ['Products', 'Branding'],
+    category: 'AI Image',
+    categories: ['AI Image', 'Image Catalogue'],
+    column: 3,
     image: '/images/projects/product-branding.jpg',
     aspect: 'landscape',
   },
   {
     id: '7',
-    slug: 'ai-commercial',
-    title: 'AI Commercial',
-    category: 'AI Videos',
-    categories: ['AI Videos', 'AI Films'],
-    image: '/images/projects/ai-commercial.jpg',
+    slug: 'luxury-product-catalogue',
+    title: 'Luxury Product Catalogue',
+    category: 'Image Catalogue',
+    categories: ['Image Catalogue', 'AI Image'],
+    image: '/images/projects/cream 2.jpeg',
     aspect: 'landscape',
   },
 ];
 
 export default function PortfolioPreview() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('All');
 
   // Filter items based on active category
   const filteredItems =
     activeCategory === 'All'
       ? portfolioItems.filter((item) => item.column !== undefined) // Top 5 for 3-column 'All' layout
-      : portfolioItems.filter(
-          (item) =>
-            item.category.toLowerCase() === activeCategory.toLowerCase() ||
-            (item.categories &&
-              item.categories.some(
-                (c) => c.toLowerCase() === activeCategory.toLowerCase()
-              )) ||
-            (activeCategory === 'AI Videos' && item.category === 'AI Films') ||
-            (activeCategory === 'AI Films' && item.category === 'AI Videos')
-        );
+      : portfolioItems.filter((item) => {
+          const active = activeCategory.toLowerCase();
+          const itemCat = item.category.toLowerCase();
+          if (itemCat === active) return true;
+          if (item.categories && item.categories.some((c) => c.toLowerCase() === active)) return true;
+          if (active === 'ai video' && (itemCat.includes('video') || itemCat.includes('film'))) return true;
+          if (active === 'ai film' && (itemCat.includes('film') || item.slug === 'ai-short-film')) return true;
+          if (active === 'image catalogue' && (itemCat.includes('catalogue') || (item.categories && item.categories.some((c) => c.toLowerCase().includes('catalogue'))))) return true;
+          return false;
+        });
 
   return (
     <section id="our-work" className="bg-[#070709] py-16 sm:py-24 text-left scroll-mt-20">
@@ -194,29 +195,35 @@ export default function PortfolioPreview() {
               <div className="space-y-5 lg:space-y-6">
                 {filteredItems
                   .filter((item) => item.column === 2)
-                  .map((item, idx) => (
-                    <motion.div
-                      key={item.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-50px' }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className={`rounded-2xl overflow-hidden bg-[#101217] border border-white/[0.08] hover:border-white/20 transition-all duration-300 group relative cursor-default select-none ${
-                        item.aspect === 'landscape' ? 'aspect-[16/10]' : 'aspect-[4/5]'
-                      }`}
-                    >
-                      <div className="w-full h-full relative">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
+                  .map((item, idx) => {
+                    const isAiFilm = item.category === 'AI Films' || item.slug === 'ai-short-film';
+                    return (
+                      <motion.div
+                        key={item.id}
+                        onClick={() => isAiFilm && navigate('/ai-films')}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-50px' }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        className={`rounded-2xl overflow-hidden bg-[#101217] border border-white/[0.08] hover:border-white/20 transition-all duration-300 group relative select-none ${
+                          isAiFilm ? 'cursor-pointer hover:border-[#8967FD]/60' : 'cursor-default'
+                        } ${
+                          item.aspect === 'landscape' ? 'aspect-[16/10]' : 'aspect-[4/5]'
+                        }`}
+                      >
+                        <div className="w-full h-full relative">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                          />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
               </div>
 
-              {/* Column 3: 2 Stacked Cards (Brand Story Flatlay & Creative Campaign Art) */}
+              {/* Column 3: 2 Stacked Cards (Brand Story Flatlay & Product Branding) */}
               <div className="space-y-5 lg:space-y-6">
                 {filteredItems
                   .filter((item) => item.column === 3)
@@ -250,32 +257,38 @@ export default function PortfolioPreview() {
               transition={{ duration: 0.3 }}
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-6 items-start justify-start"
             >
-              {filteredItems.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.35, delay: idx * 0.08 }}
-                  className="rounded-2xl overflow-hidden bg-[#101217] border border-white/[0.08] hover:border-white/20 transition-all duration-300 group relative aspect-[16/11] cursor-default select-none"
-                >
-                  <div className="w-full h-full relative">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-transform duration-500 ease-out"
-                    />
-                    {/* Subtle luxury caption bar on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-left pointer-events-none">
-                      <span className="text-[10px] font-mono tracking-wider text-[#A78BFA] uppercase mb-1">
-                        {item.category}
-                      </span>
-                      <h3 className="font-heading font-bold text-white text-base sm:text-lg">
-                        {item.title}
-                      </h3>
+              {filteredItems.map((item, idx) => {
+                const isAiFilm = item.category === 'AI Films' || item.slug === 'ai-short-film';
+                return (
+                  <motion.div
+                    key={item.id}
+                    onClick={() => isAiFilm && navigate('/ai-films')}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.35, delay: idx * 0.08 }}
+                    className={`rounded-2xl overflow-hidden bg-[#101217] border border-white/[0.08] hover:border-white/20 transition-all duration-300 group relative aspect-[16/11] select-none ${
+                      isAiFilm ? 'cursor-pointer hover:border-[#8967FD]/60' : 'cursor-default'
+                    }`}
+                  >
+                    <div className="w-full h-full relative">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-transform duration-500 ease-out"
+                      />
+                      {/* Subtle luxury caption bar on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-left pointer-events-none">
+                        <span className="text-[10px] font-mono tracking-wider text-[#A78BFA] uppercase mb-1">
+                          {item.category}
+                        </span>
+                        <h3 className="font-heading font-bold text-white text-base sm:text-lg">
+                          {item.title}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </motion.div>
           )}
         </AnimatePresence>

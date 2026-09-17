@@ -7,9 +7,17 @@ import { ArrowUpRight } from 'lucide-react';
 export default function ProjectCard({ project }) {
   if (!project) return null;
 
+  const targetLink =
+    project.category === 'AI Films' ||
+    project.category === 'AI Film' ||
+    project.slug === 'ai-short-film' ||
+    project.services?.includes('AI Films')
+      ? '/ai-films'
+      : `/work/${project.slug}`;
+
   return (
     <Link
-      to={`/work/${project.slug}`}
+      to={targetLink}
       className="group block relative overflow-hidden rounded-2xl bg-surface border border-border-brand/60 hover:border-brand-violet/50 transition-all duration-300"
     >
       <div className="aspect-[16/10] overflow-hidden bg-[#101218] relative">

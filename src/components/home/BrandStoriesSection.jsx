@@ -45,7 +45,7 @@ export default function BrandStoriesSection() {
             </p>
 
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-7">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[48px] 2xl:text-[52px] font-heading font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-7">
               <span className="block">More Than Content.</span>
               <span className="block mt-1 sm:mt-1.5">A Story That Sells.</span>
             </h2>

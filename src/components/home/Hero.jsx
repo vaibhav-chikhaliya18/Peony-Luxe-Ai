@@ -6,7 +6,7 @@ export default function Hero() {
   return (
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#070709] pt-32 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 selection:bg-[#9166FD] selection:text-white"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#070709] pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 xl:pt-40 xl:pb-28 selection:bg-[#9166FD] selection:text-white"
       >
         {/* Background Visual Layer: Subtle Dark Tablet / Stylus Backdrop */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -35,7 +35,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[11px] sm:text-xs font-semibold tracking-[0.28em] text-[#9A9EA7] uppercase mb-6 sm:mb-8 select-none">
+            <p className="text-[11px] sm:text-xs font-semibold tracking-[0.28em] text-[#9A9EA7] uppercase mb-5 sm:mb-7 select-none">
               AI CREATIVE STUDIO
             </p>
           </motion.div>
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading font-extrabold text-[52px] sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[112px] leading-[0.98] tracking-[-0.035em] text-white select-none"
+            className="font-heading font-extrabold text-[46px] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px] 2xl:text-[112px] leading-[0.98] tracking-[-0.035em] text-white select-none"
           >
             <span className="block">Where</span>
             <span className="block mt-1 sm:mt-2">Imagination</span>
