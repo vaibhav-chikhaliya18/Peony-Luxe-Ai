@@ -154,9 +154,14 @@ export default function Contact() {
                     <span className="block text-[10px] font-mono tracking-[0.2em] text-[#8E95A5] uppercase">
                       PHONE / WHATSAPP
                     </span>
+                    <span className="text-[11px] text-[#A6ACB8] block font-medium">
+                      Vaibhav Chikhaliya
+                    </span>
                     <a
-                      href="tel:+919825548544"
-                      className="text-xs sm:text-sm font-semibold text-white hover:text-[#6286FE] transition-colors block"
+                      href="https://api.whatsapp.com/send?phone=919825548544"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs sm:text-sm font-semibold text-white hover:text-[#6286FE] transition-colors block mt-0.5"
                     >
                       +91 98255 48544
                     </a>

@@ -5,7 +5,7 @@ import { services } from '../../data/services';
 const connectLinks = [
   { name: 'Instagram', href: 'https://www.instagram.com/peony_luxe_ai/' },
   { name: 'Email', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=vaibhavchikhaliya18@gmail.com' },
-  { name: 'WhatsApp', href: 'https://wa.me/919825548544' },
+  { name: 'WhatsApp', href: 'https://api.whatsapp.com/send?phone=919825548544' },
 ];
 
 export default function Footer() {
