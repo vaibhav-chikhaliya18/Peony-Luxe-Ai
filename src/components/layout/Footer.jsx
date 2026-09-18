@@ -3,7 +3,7 @@ import { navLinks } from '../../data/navigation';
 import { services } from '../../data/services';
 
 const connectLinks = [
-  { name: 'Instagram', href: 'https://instagram.com' },
+  { name: 'Instagram', href: 'https://www.instagram.com/peony_luxe_ai/' },
   { name: 'Email', href: 'mailto:vaibhavchikhaliya18@gmail.com' },
   { name: 'WhatsApp', href: 'https://wa.me/919825548544' },
 ];
