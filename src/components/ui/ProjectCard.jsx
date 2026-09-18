@@ -4,20 +4,21 @@ import { ArrowUpRight } from 'lucide-react';
 /**
  * Reusable ProjectCard component
  */
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, to }) {
   if (!project) return null;
 
-  const targetLink =
+  const isAiFilm =
     project.category === 'AI Films' ||
     project.category === 'AI Film' ||
     project.slug === 'ai-short-film' ||
-    project.services?.includes('AI Films')
-      ? '/ai-films'
-      : `/work/${project.slug}`;
+    project.services?.includes('AI Films') ||
+    project.services?.includes('AI Film');
+
+  const destination = isAiFilm ? '/ai-films' : (to || '/contact');
 
   return (
     <Link
-      to={targetLink}
+      to={destination}
       className="group block relative overflow-hidden rounded-2xl bg-surface border border-border-brand/60 hover:border-brand-violet/50 transition-all duration-300"
     >
       <div className="aspect-[16/10] overflow-hidden bg-[#101218] relative">

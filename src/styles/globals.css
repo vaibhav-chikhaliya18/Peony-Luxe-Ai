@@ -41,6 +41,49 @@ html {
   scroll-behavior: auto; /* Managed smoothly by Lenis */
 }
 
+/* ==========================================================================
+   Luxury Brand Scrollbar (Side Scrolling Line)
+   ========================================================================== */
+
+/* Modern Standard (Firefox & compliant browsers) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8057FF #070709;
+}
+
+/* Chromium (Chrome, Edge, Brave, Opera) & Safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070709;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4C7DFF 0%, #8057FF 50%, #D65CFF 100%);
+  border-radius: 9999px;
+  border: 2px solid #070709;
+  box-shadow: 0 0 10px rgba(128, 87, 255, 0.35);
+  transition: all 0.25s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #608BFF 0%, #956FFF 50%, #E27BFF 100%);
+  border-color: #070709;
+  box-shadow: 0 0 16px rgba(214, 92, 255, 0.7), 0 0 8px rgba(76, 125, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #7BA2FF 0%, #A483FF 50%, #EAA0FF 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #070709;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);

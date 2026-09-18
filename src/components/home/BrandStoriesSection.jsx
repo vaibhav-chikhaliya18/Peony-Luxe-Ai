@@ -19,7 +19,7 @@ export default function BrandStoriesSection() {
           >
             <div className="relative rounded-[26px] overflow-hidden bg-[#101217] border border-white/[0.08] shadow-2xl aspect-[3/4] max-h-[600px] group">
               <img
-                src="/images/projects/brand-stories-model.jpg"
+                src="/images/projects/client 4 (4).jpg"
                 alt="Brand Stories Editorial"
                 className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out"
               />
@@ -62,7 +62,7 @@ export default function BrandStoriesSection() {
             {/* CTA Button */}
             <div className="mt-8 sm:mt-10">
               <Link
-                to="/brand-stories"
+                to="/contact"
                 className="group relative inline-flex items-center justify-center p-[1px] rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] hover:shadow-[0_0_28px_rgba(137,103,253,0.45)]"
               >
                 {/* Animated Iridescent Gradient Border */}

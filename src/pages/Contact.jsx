@@ -4,12 +4,11 @@ import { Mail, Clock, ShieldCheck, CheckCircle2, ArrowRight, Sparkles, MapPin, P
 import PageTransition from '../components/animations/PageTransition';
 
 const projectTypes = [
-  'AI Film / Narrative Short',
-  'Commercial Video Production',
-  'Brand Storytelling & Editorial',
-  'AI Image Creation & Key Visuals',
-  'Creative Direction & Concepting',
-  'Bespoke Studio Inquiry',
+  'AI Image Generation',
+  'AI Video Generation',
+  'Image Catalogue',
+  'AI Film',
+  'Brand Story',
 ];
 
 export default function Contact() {
@@ -18,7 +17,7 @@ export default function Contact() {
     email: '',
     phone: '',
     company: '',
-    projectType: 'AI Film / Narrative Short',
+    projectType: 'AI Image Generation',
     message: '',
   });
 

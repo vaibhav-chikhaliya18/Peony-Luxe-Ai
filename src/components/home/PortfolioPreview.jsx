@@ -35,11 +35,11 @@ const portfolioItems = [
   {
     id: '3',
     slug: 'brand-stories',
-    title: 'Brand Stories Editorial',
+    title: 'Fashion Catalogue Editorial',
     category: 'Brand Story',
-    categories: ['Brand Story'],
+    categories: ['Brand Story', 'Image Catalogue'],
     column: 2,
-    image: '/images/projects/brand-stories-model.jpg',
+    image: '/images/projects/client-2-2.jpg',
     aspect: 'portrait',
   },
   {
@@ -49,7 +49,7 @@ const portfolioItems = [
     category: 'Brand Story',
     categories: ['Brand Story', 'Image Catalogue'],
     column: 3,
-    image: '/images/projects/brand-story.jpg',
+    image: '/images/projects/client 4 (4).jpg',
     aspect: 'landscape',
   },
   {
@@ -64,20 +64,11 @@ const portfolioItems = [
   {
     id: '6',
     slug: 'product-branding',
-    title: 'Product Branding',
+    title: 'Fashion Catalogue',
     category: 'AI Image',
     categories: ['AI Image', 'Image Catalogue'],
     column: 3,
-    image: '/images/projects/product-branding.jpg',
-    aspect: 'landscape',
-  },
-  {
-    id: '7',
-    slug: 'luxury-product-catalogue',
-    title: 'Luxury Product Catalogue',
-    category: 'Image Catalogue',
-    categories: ['Image Catalogue', 'AI Image'],
-    image: '/images/projects/cream 2.jpeg',
+    image: '/images/projects/cateloug 1.png',
     aspect: 'landscape',
   },
 ];
