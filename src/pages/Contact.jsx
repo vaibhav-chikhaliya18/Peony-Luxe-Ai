@@ -106,8 +106,10 @@ export default function Contact() {
                       DIRECT INQUIRIES
                     </span>
                     <a
-                      href="mailto:vaibhavchikhaliya18@gmail.com"
-                      className="text-sm sm:text-base font-medium text-white hover:text-[#8967FD] transition-colors break-all"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=vaibhavchikhaliya18@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs sm:text-sm font-semibold text-white hover:text-[#8967FD] transition-colors block"
                     >
                       vaibhavchikhaliya18@gmail.com
                     </a>
